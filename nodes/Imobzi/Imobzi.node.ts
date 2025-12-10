@@ -2009,13 +2009,13 @@ export class Imobzi implements INodeType {
 			createUpdateFieldsProperty('evento'),
 			createUpdateFieldsProperty('integracao'),
 			createUpdateFieldsProperty('usuario'),
-			// Ordenação e paginação
+			// Paginação com cursor (formato da API Imobzi)
 			{
-				displayName: 'Order By',
-				name: 'orderBy',
+				displayName: 'Cursor',
+				name: 'cursor',
 				type: 'string',
 				default: '',
-				description: 'Field to order by',
+				description: 'Cursor received from previous request for pagination',
 				displayOptions: {
 					show: {
 						operation: ['getAll'],
@@ -2023,27 +2023,15 @@ export class Imobzi implements INodeType {
 				},
 			},
 			{
-				displayName: 'Limit',
-				name: 'limit',
-				type: 'number',
-				typeOptions: {
-					minValue: 1,
-				},
-				description: 'Max number of results to return',
-				default: 50,
-				displayOptions: {
-					show: {
-						operation: ['getAll'],
-					},
-				},
-			},
-			{
-				displayName: 'Offset',
-				name: 'offset',
-				type: 'number',
-				default: 0,
-				typeOptions: { minValue: 0 },
-				description: 'Number of items to skip',
+				displayName: 'Order',
+				name: 'order',
+				type: 'options',
+				options: [
+					{ name: 'Ascending', value: 'asc' },
+					{ name: 'Descending', value: 'desc' },
+				],
+				default: 'desc',
+				description: 'Order direction',
 				displayOptions: {
 					show: {
 						operation: ['getAll'],
@@ -2090,11 +2078,20 @@ export class Imobzi implements INodeType {
 					case 'getAll': {
 						const filters = this.getNodeParameter('filters', itemIndex, {}) as IDataObject;
 						const quickSearch = this.getNodeParameter('quickSearch', itemIndex, {}) as IDataObject;
-						const orderBy = this.getNodeParameter('orderBy', itemIndex) as string;
-						const limit = this.getNodeParameter('limit', itemIndex) as number;
-						const offset = this.getNodeParameter('offset', itemIndex) as number;
+						const cursor = this.getNodeParameter('cursor', itemIndex, '') as string;
+						const order = this.getNodeParameter('order', itemIndex, 'desc') as string;
 						
-						const qs = buildQueryFromFilters(filters);
+						const qs: IDataObject = buildQueryFromFilters(filters);
+						
+						// Adicionar cursor para paginação
+						if (cursor) {
+							qs.cursor = cursor;
+						}
+						
+						// Adicionar order
+						if (order) {
+							qs.order = order;
+						}
 						
 						// Adicionar busca rápida para Contacts/Leads
 						if ((resource === 'contact' || resource === 'lead') && quickSearch) {
@@ -2111,7 +2108,7 @@ export class Imobzi implements INodeType {
 									{
 										method: 'GET',
 										url: 'https://api.imobzi.app/v1/contacts/search',
-										qs: Object.keys(qs).length > 0 ? qs : undefined,
+										qs,
 									},
 								);
 								break;
@@ -2122,10 +2119,6 @@ export class Imobzi implements INodeType {
 						if (resource === 'property' && quickSearch && quickSearch.name) {
 							qs.search_text = quickSearch.name;
 						}
-						
-						if (orderBy) qs.orderBy = orderBy;
-						if (limit) qs.limit = limit;
-						if (offset) qs.offset = offset;
 
 						response = await this.helpers.requestWithAuthentication.call(
 							this,
@@ -2133,7 +2126,7 @@ export class Imobzi implements INodeType {
 							{
 								method: 'GET',
 								url: `https://api.imobzi.app/${endpoint}`,
-								qs: Object.keys(qs).length > 0 ? qs : undefined,
+								qs,
 							},
 						);
 						break;
