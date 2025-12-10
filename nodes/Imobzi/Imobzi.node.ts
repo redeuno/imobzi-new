@@ -44,31 +44,31 @@ const resourceEndpoint: { [resource: string]: string } = {
 };
 
 // Mapeamento de recursos para os nomes dos arrays na resposta
+// NOTA: Alguns recursos retornam array direto, outros retornam objeto com chave
 const resourceResponseKey: { [resource: string]: string } = {
-	lead: 'contacts',
+	// Retornam objeto com chave nomeada
 	property: 'properties',
 	contact: 'contacts',
+	lead: 'contacts',
 	contrato: 'contracts',
-	financeiro: 'accounts',
 	locacao: 'leases',
 	documento: 'documents',
-	tarefa: 'timeline',
+	
+	// Financial
+	financeiro: 'accounts',
+	transaction: 'transactions',
+	
+	// Estes retornam ARRAY DIRETO (não usar chave)
+	usuario: '', // Array direto
+	pipeline: '', // Array direto
+	integracao: '', // Array direto
+	webhook: '', // Array direto
+	
+	// Casos especiais
+	deal: '', // Estrutura complexa
 	agenda: 'calendar',
 	evento: 'calendar',
-	integracao: 'integrations',
-	usuario: 'users',
-	account: 'users',
-	deal: 'deals',
-	pipeline: 'pipelines',
-	invoice: 'invoices',
-	transaction: 'transactions',
-	webhook: 'webhooks',
-	team: 'teams',
-	neighborhood: 'neighborhoods',
-	propertyType: 'property_types',
-	propertyFeature: 'property_features',
-	mediaSource: 'media_sources',
-	notaFiscal: 'invoices',
+	tarefa: 'timeline',
 	timeline: 'timeline',
 	notification: 'notifications',
 };
@@ -2321,59 +2321,73 @@ export class Imobzi implements INodeType {
 						throw new NodeOperationError(this.getNode(), `Operação "${operation}" não suportada!`);
 				}
 
-				// Tratar resposta da API
-				let jsonData;
+				// Tratar resposta da API (3 tipos possíveis)
+				if (!response) {
+					returnData.push({ json: { message: 'Resposta vazia da API' } });
+					continue;
+				}
+
 				const responseKey = resourceResponseKey[resource];
 				
-				if (response) {
-					// Para getAll, tentar pegar do campo específico do recurso (properties, contacts, etc)
-					if (operation === 'getAll' && responseKey && response[responseKey] !== undefined) {
-						jsonData = response[responseKey];
-						
-						// Adicionar informações de paginação como metadados
-						const metadata: IDataObject = {};
-						if (response.cursor) metadata.cursor = response.cursor;
-						if (response.count !== undefined) metadata.total_count = response.count;
-						if (response.database) metadata.database = response.database;
-						
-						// Se for array, adicionar cada item com metadados
-						if (Array.isArray(jsonData)) {
-							if (jsonData.length === 0) {
-								returnData.push({ 
-									json: { 
-										message: 'Nenhum resultado encontrado',
-										...metadata 
-									} 
-								});
-							} else {
-								jsonData.forEach((item: any, index: number) => {
-									// Adicionar metadados apenas no primeiro item
-									if (index === 0) {
-										returnData.push({ json: { ...item, _metadata: metadata } });
-									} else {
-										returnData.push({ json: item });
-									}
-								});
-							}
-						} else {
-							returnData.push({ json: { ...jsonData, _metadata: metadata } });
-						}
+				// TIPO 1: Resposta é array direto (users, pipelines, integrations, webhooks)
+				if (Array.isArray(response)) {
+					if (response.length === 0) {
+						returnData.push({ json: { message: 'Nenhum resultado encontrado' } });
+					} else {
+						response.forEach((item: any) => {
+							returnData.push({ json: item });
+						});
 					}
-					// Se a resposta tem data, usar data
-					else if (response.data !== undefined) {
-						jsonData = response.data;
-						if (Array.isArray(jsonData)) {
+				}
+				// TIPO 2: Resposta tem campo específico do recurso (properties, contacts, etc)
+				else if (operation === 'getAll' && responseKey && response[responseKey] !== undefined) {
+					const jsonData = response[responseKey];
+					
+					// Metadados de paginação
+					const metadata: IDataObject = {};
+					if (response.cursor) metadata.cursor = response.cursor;
+					if (response.count !== undefined) metadata.total_count = response.count;
+					if (response.total !== undefined) metadata.total = response.total;
+					if (response.database) metadata.database = response.database;
+					
+					if (Array.isArray(jsonData)) {
+						if (jsonData.length === 0) {
+							returnData.push({ 
+								json: { 
+									message: 'Nenhum resultado encontrado',
+									...metadata 
+								} 
+							});
+						} else {
+							jsonData.forEach((item: any, index: number) => {
+								// Adicionar metadados apenas no primeiro item
+								if (index === 0 && Object.keys(metadata).length > 0) {
+									returnData.push({ json: { ...item, _metadata: metadata } });
+								} else {
+									returnData.push({ json: item });
+								}
+							});
+						}
+					} else {
+						returnData.push({ json: { ...jsonData, _metadata: metadata } });
+					}
+				}
+				// TIPO 3: Resposta tem 'data' (alguns endpoints específicos)
+				else if (response.data !== undefined) {
+					const jsonData = response.data;
+					if (Array.isArray(jsonData)) {
+						if (jsonData.length === 0) {
+							returnData.push({ json: { message: 'Nenhum resultado encontrado' } });
+						} else {
 							jsonData.forEach((item: any) => returnData.push({ json: item }));
-						} else {
-							returnData.push({ json: jsonData });
 						}
+					} else {
+						returnData.push({ json: jsonData });
 					}
-					// Caso contrário, usar a resposta inteira
-					else {
-						returnData.push({ json: response });
-					}
-				} else {
-					returnData.push({ json: {} });
+				}
+				// FALLBACK: Retornar resposta inteira (para deals e outros casos especiais)
+				else {
+					returnData.push({ json: response });
 				}
 			} catch (error: any) {
 				if (this.continueOnFail()) {
