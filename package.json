@@ -1,6 +1,6 @@
 {
   "name": "@mantovani.bruno/n8n-nodes-imobzi-new",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Nodes para integração com a API da Imobzi no n8n - Atualizado para nova API (api.imobzi.app)",
   "keywords": [
     "n8n-community-node-package",
