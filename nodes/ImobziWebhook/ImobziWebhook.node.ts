@@ -4,7 +4,7 @@ export class ImobziWebhook implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Imobzi Webhook',
 		name: 'imobziWebhook',
-		icon: 'file:webhook.svg',
+		icon: 'file:imobzi.svg',
 		group: ['trigger'],
 		version: 1,
 		description: 'Recebe eventos da API Imobzi via Webhook',

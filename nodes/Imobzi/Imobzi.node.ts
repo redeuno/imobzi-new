@@ -2298,12 +2298,53 @@ export class Imobzi implements INodeType {
 						throw new NodeOperationError(this.getNode(), `Operação "${operation}" não suportada!`);
 				}
 
-				returnData.push({ json: response.data || response });
-			} catch (error) {
-				if (this.continueOnFail()) {
-					returnData.push({ json: { error: error.message }, pairedItem: itemIndex });
+				// Tratar resposta da API
+				let jsonData;
+				if (response) {
+					// Se a resposta tem data, usar data
+					if (response.data !== undefined) {
+						jsonData = response.data;
+					}
+					// Se a resposta tem results (paginação), usar results
+					else if (response.results !== undefined) {
+						jsonData = response.results;
+					}
+					// Caso contrário, usar a resposta inteira
+					else {
+						jsonData = response;
+					}
 				} else {
-					throw new NodeOperationError(this.getNode(), error, { itemIndex });
+					jsonData = {};
+				}
+
+				// Se for array e for get/getAll, adicionar cada item separado
+				if (Array.isArray(jsonData) && (operation === 'getAll' || operation === 'get')) {
+					if (jsonData.length === 0) {
+						returnData.push({ json: { message: 'Nenhum resultado encontrado' } });
+					} else {
+						jsonData.forEach((item: any) => {
+							returnData.push({ json: item });
+						});
+					}
+				} else {
+					returnData.push({ json: jsonData });
+				}
+			} catch (error: any) {
+				if (this.continueOnFail()) {
+					returnData.push({ 
+						json: { 
+							error: error.message,
+							errorDetails: error.response?.data || error.description || 'Erro desconhecido',
+							statusCode: error.response?.status || error.httpCode || 'N/A'
+						}, 
+						pairedItem: itemIndex 
+					});
+				} else {
+					throw new NodeOperationError(
+						this.getNode(), 
+						`Erro ao executar operação: ${error.message}. Detalhes: ${JSON.stringify(error.response?.data || error.description || 'Sem detalhes')}`,
+						{ itemIndex }
+					);
 				}
 			}
 		}
