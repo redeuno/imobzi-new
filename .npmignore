@@ -16,13 +16,13 @@ tsconfig.json
 gulpfile.js
 credentials/**/*.ts
 nodes/**/*.ts
-*.json
-!package.json
-!dist/**/*.json
 test-*.js
 analyze-*.js
+diagnostico-*.js
 *.ps1
 *.sh
 *.tgz
+*.log
 imobzi-api-completa.json
 resumo-api.json
+tsconfig.tsbuildinfo
