@@ -1,6 +1,6 @@
 {
   "name": "@mantovani.bruno/n8n-nodes-imobzi-new",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Nodes para integração com a API da Imobzi no n8n - Atualizado para nova API (api.imobzi.app)",
   "keywords": [
     "n8n-community-node-package",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/redeuno/imobzi-new.git"
+    "url": "git+https://github.com/redeuno/imobzi-new.git"
   },
   "engines": {
     "node": ">=20.15"

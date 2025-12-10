@@ -28,7 +28,7 @@ export class ImobziApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				Authorization: '=Bearer {{$credentials.apiKey}}',
+				'X-Imobzi-Secret': '={{$credentials.apiKey}}',
 				'Content-Type': 'application/json',
 			},
 		},
@@ -37,7 +37,7 @@ export class ImobziApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: 'https://api.imobzi.app',
-			url: '/v1/users',
+			url: '/v1/properties',
 			method: 'GET',
 		},
 	};
