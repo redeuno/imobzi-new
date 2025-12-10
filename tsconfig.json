@@ -23,6 +23,10 @@
 	},
 	"include": [
 		"credentials/**/*",
-		"nodes/**/*",
+		"nodes/**/*"
 	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }
