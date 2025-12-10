@@ -447,24 +447,24 @@ const createUpdateFieldsProperty = (resourceName: string): INodeProperties => {
 
 export class Imobzi implements INodeType {
 	methods = {
-		loadOptions: {
-			// Métodos específicos para cada recurso
-			async getLeads(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
-				const response = await this.helpers.requestWithAuthentication.call(
-					this,
-					'imobziApi',
-					{ method: 'GET', url: '/v1/leads' },
-				);
-				return (response.data || []).map((item: any) => ({
-					name: item.name || `ID ${item.id}`,
-					value: item.id,
-				}));
-			},
+	loadOptions: {
+		// Métodos específicos para cada recurso
+		async getLeads(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
+			const response = await this.helpers.requestWithAuthentication.call(
+				this,
+				'imobziApi',
+				{ method: 'GET', url: 'https://api.imobzi.app/v1/leads' },
+			);
+			return (response.data || []).map((item: any) => ({
+				name: item.name || `ID ${item.id}`,
+				value: item.id,
+			}));
+		},
 			async getLeadFields(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/leads', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/leads', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -476,7 +476,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/properties' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/properties' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.title || item.titulo || `ID ${item.id}`,
@@ -487,7 +487,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/properties', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/properties', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -499,7 +499,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/contacts' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/contacts' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.name || `ID ${item.id}`,
@@ -510,7 +510,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/contacts', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/contacts', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -522,7 +522,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/contracts' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/contracts' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.client || item.cliente || `ID ${item.id}`,
@@ -533,7 +533,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/contracts', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/contracts', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -545,7 +545,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/financial/accounts' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/financial/accounts' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.description || item.descricao || `ID ${item.id}`,
@@ -556,7 +556,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/financial/accounts', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/financial/accounts', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -568,7 +568,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/rentals' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/rentals' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.tenant || item.inquilino || `ID ${item.id}`,
@@ -579,7 +579,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/rentals', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/rentals', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -591,7 +591,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/documents' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/documents' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.filename || item.nomeArquivo || `ID ${item.id}`,
@@ -602,7 +602,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/documents', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/documents', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -614,7 +614,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/tasks' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/tasks' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.title || item.titulo || `ID ${item.id}`,
@@ -625,7 +625,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/tasks', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/tasks', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -637,7 +637,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/agendas' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/agendas' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.title || item.titulo || `ID ${item.id}`,
@@ -648,7 +648,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/agendas', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/agendas', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -660,7 +660,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/events' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/events' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.title || item.titulo || `ID ${item.id}`,
@@ -671,7 +671,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/events', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/events', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -683,7 +683,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/integrations' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/integrations' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.name || item.nome || `ID ${item.id}`,
@@ -694,7 +694,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/integrations', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/integrations', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -706,7 +706,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/users' },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/users' },
 				);
 				return (response.data || []).map((item: any) => ({
 					name: item.name || item.nome || `ID ${item.id}`,
@@ -717,7 +717,7 @@ export class Imobzi implements INodeType {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
 					'imobziApi',
-					{ method: 'GET', url: '/v1/users', qs: { limit: 1 } },
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/users', qs: { limit: 1 } },
 				);
 				const item = (response.data || [])[0] || {};
 				return Object.keys(item).map(key => ({
@@ -2110,7 +2110,7 @@ export class Imobzi implements INodeType {
 									'imobziApi',
 									{
 										method: 'GET',
-										url: '/v1/contacts/search',
+										url: 'https://api.imobzi.app/v1/contacts/search',
 										qs: Object.keys(qs).length > 0 ? qs : undefined,
 									},
 								);
@@ -2132,7 +2132,7 @@ export class Imobzi implements INodeType {
 							'imobziApi',
 							{
 								method: 'GET',
-								url: `/${endpoint}`,
+								url: `https://api.imobzi.app/${endpoint}`,
 								qs: Object.keys(qs).length > 0 ? qs : undefined,
 							},
 						);
@@ -2149,7 +2149,7 @@ export class Imobzi implements INodeType {
 							'imobziApi',
 							{
 								method: 'GET',
-									url: `/${endpoint}/${searchValue}`,
+									url: `https://api.imobzi.app/${endpoint}/${searchValue}`,
 								},
 							);
 						}
@@ -2216,7 +2216,7 @@ export class Imobzi implements INodeType {
 								'imobziApi',
 								{
 									method: 'GET',
-									url: '/v1/contact/exists',
+									url: 'https://api.imobzi.app/v1/contact/exists',
 									qs: qs,
 								},
 							);
@@ -2229,7 +2229,7 @@ export class Imobzi implements INodeType {
 									'imobziApi',
 									{
 										method: 'GET',
-										url: '/v1/contacts/search',
+										url: 'https://api.imobzi.app/v1/contacts/search',
 										qs: { search_text: searchValue },
 									},
 								);
@@ -2243,7 +2243,7 @@ export class Imobzi implements INodeType {
 									'imobziApi',
 									{
 										method: 'GET',
-										url: '/v1/properties',
+										url: 'https://api.imobzi.app/v1/properties',
 										qs: { search_text: searchValue },
 									},
 								);
@@ -2262,7 +2262,7 @@ export class Imobzi implements INodeType {
 							'imobziApi',
 							{
 								method: 'POST',
-								url: `/${endpoint}`,
+								url: `https://api.imobzi.app/${endpoint}`,
 								body: Object.keys(body).length > 0 ? body : undefined,
 							},
 						);
@@ -2276,7 +2276,7 @@ export class Imobzi implements INodeType {
 							'imobziApi',
 							{
 								method: 'PUT',
-								url: `/${endpoint}/${id}`,
+								url: `https://api.imobzi.app/${endpoint}/${id}`,
 								body: Object.keys(body).length > 0 ? body : undefined,
 							},
 						);
@@ -2289,7 +2289,7 @@ export class Imobzi implements INodeType {
 							'imobziApi',
 							{
 								method: 'DELETE',
-								url: `/${endpoint}/${id}`,
+								url: `https://api.imobzi.app/${endpoint}/${id}`,
 							},
 						);
 						break;
