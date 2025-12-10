@@ -1,6 +1,6 @@
 {
-  "node": "n8n-nodes-imobzi-new.imobzi",
-  "nodeVersion": "2.0",
+  "node": "n8n-nodes-imobzi-new.imobziSimples",
+  "nodeVersion": "1.0",
   "codexVersion": "1.0",
   "categories": [
     "Sales",
@@ -13,4 +13,5 @@
       }
     ]
   }
-} 
+}
+

@@ -1,5 +1,5 @@
 {
-  "node": "n8n-nodes-imobzi.imobziWebhook",
+  "node": "n8n-nodes-imobzi-new.imobziWebhook",
   "nodeVersion": "1.0",
   "codexVersion": "1.0",
   "categories": [
