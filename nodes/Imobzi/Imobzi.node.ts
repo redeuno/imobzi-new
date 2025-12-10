@@ -477,19 +477,19 @@ const createUpdateFieldsProperty = (resourceName: string): INodeProperties => {
 
 export class Imobzi implements INodeType {
 	methods = {
-	loadOptions: {
-		// Métodos específicos para cada recurso
-		async getLeads(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
-			const response = await this.helpers.requestWithAuthentication.call(
-				this,
-				'imobziApi',
-				{ method: 'GET', url: 'https://api.imobzi.app/v1/leads' },
-			);
-			return (response.data || []).map((item: any) => ({
-				name: item.name || `ID ${item.id}`,
-				value: item.id,
-			}));
-		},
+		loadOptions: {
+			// Métodos específicos para cada recurso
+			async getLeads(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
+				const response = await this.helpers.requestWithAuthentication.call(
+					this,
+					'imobziApi',
+					{ method: 'GET', url: 'https://api.imobzi.app/v1/leads' },
+				);
+				return (response.data || []).map((item: any) => ({
+					name: item.name || `ID ${item.id}`,
+					value: item.id,
+				}));
+			},
 			async getLeadFields(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
 				const response = await this.helpers.requestWithAuthentication.call(
 					this,
