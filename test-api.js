@@ -4,7 +4,7 @@
 
 const https = require('https');
 
-const apiKey = 'SEU_TOKEN_AQUI'; // Substitua pela sua API Key
+const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkX2F0IjoiMjAyNS0xMi0xMFQxMzowNzo1MC43MDM3MzVaIiwiaXNfdGhpcmRfcGFydHlfYWNjZXNzIjp0cnVlLCJ0aGlyZF9wYXJ0eV9hcHBfaWQiOiJoNTZDNGpqNXc3RjgifQ.mNrABlX_L88mBKG4isoKm5pnycR43J3b-3Wku8pBIFk';
 
 function testAPI(endpoint) {
     return new Promise((resolve, reject) => {

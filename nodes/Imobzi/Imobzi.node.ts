@@ -10,7 +10,7 @@ import type {
 } from 'n8n-workflow';
 import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 
-// Mapeamento de recursos para endpoints oficiais da API Imobzi
+// Mapeamento de recursos para endpoints e nomes de resposta da API Imobzi
 // Baseado na documentação: https://developer.imobzi.com/
 // Atualizado para nova API: https://api.imobzi.app (2025-12-09)
 const resourceEndpoint: { [resource: string]: string } = {
@@ -41,6 +41,36 @@ const resourceEndpoint: { [resource: string]: string } = {
 	notaFiscal: 'v1/notas-fiscais',
 	timeline: 'v1/timeline',
 	notification: 'v1/notifications',
+};
+
+// Mapeamento de recursos para os nomes dos arrays na resposta
+const resourceResponseKey: { [resource: string]: string } = {
+	lead: 'contacts',
+	property: 'properties',
+	contact: 'contacts',
+	contrato: 'contracts',
+	financeiro: 'accounts',
+	locacao: 'leases',
+	documento: 'documents',
+	tarefa: 'timeline',
+	agenda: 'calendar',
+	evento: 'calendar',
+	integracao: 'integrations',
+	usuario: 'users',
+	account: 'users',
+	deal: 'deals',
+	pipeline: 'pipelines',
+	invoice: 'invoices',
+	transaction: 'transactions',
+	webhook: 'webhooks',
+	team: 'teams',
+	neighborhood: 'neighborhoods',
+	propertyType: 'property_types',
+	propertyFeature: 'property_features',
+	mediaSource: 'media_sources',
+	notaFiscal: 'invoices',
+	timeline: 'timeline',
+	notification: 'notifications',
 };
 
 // Função para criar campos de criação dinâmicos específicos por recurso
@@ -2293,34 +2323,57 @@ export class Imobzi implements INodeType {
 
 				// Tratar resposta da API
 				let jsonData;
+				const responseKey = resourceResponseKey[resource];
+				
 				if (response) {
-					// Se a resposta tem data, usar data
-					if (response.data !== undefined) {
-						jsonData = response.data;
+					// Para getAll, tentar pegar do campo específico do recurso (properties, contacts, etc)
+					if (operation === 'getAll' && responseKey && response[responseKey] !== undefined) {
+						jsonData = response[responseKey];
+						
+						// Adicionar informações de paginação como metadados
+						const metadata: IDataObject = {};
+						if (response.cursor) metadata.cursor = response.cursor;
+						if (response.count !== undefined) metadata.total_count = response.count;
+						if (response.database) metadata.database = response.database;
+						
+						// Se for array, adicionar cada item com metadados
+						if (Array.isArray(jsonData)) {
+							if (jsonData.length === 0) {
+								returnData.push({ 
+									json: { 
+										message: 'Nenhum resultado encontrado',
+										...metadata 
+									} 
+								});
+							} else {
+								jsonData.forEach((item: any, index: number) => {
+									// Adicionar metadados apenas no primeiro item
+									if (index === 0) {
+										returnData.push({ json: { ...item, _metadata: metadata } });
+									} else {
+										returnData.push({ json: item });
+									}
+								});
+							}
+						} else {
+							returnData.push({ json: { ...jsonData, _metadata: metadata } });
+						}
 					}
-					// Se a resposta tem results (paginação), usar results
-					else if (response.results !== undefined) {
-						jsonData = response.results;
+					// Se a resposta tem data, usar data
+					else if (response.data !== undefined) {
+						jsonData = response.data;
+						if (Array.isArray(jsonData)) {
+							jsonData.forEach((item: any) => returnData.push({ json: item }));
+						} else {
+							returnData.push({ json: jsonData });
+						}
 					}
 					// Caso contrário, usar a resposta inteira
 					else {
-						jsonData = response;
+						returnData.push({ json: response });
 					}
 				} else {
-					jsonData = {};
-				}
-
-				// Se for array e for get/getAll, adicionar cada item separado
-				if (Array.isArray(jsonData) && (operation === 'getAll' || operation === 'get')) {
-					if (jsonData.length === 0) {
-						returnData.push({ json: { message: 'Nenhum resultado encontrado' } });
-					} else {
-						jsonData.forEach((item: any) => {
-							returnData.push({ json: item });
-						});
-					}
-				} else {
-					returnData.push({ json: jsonData });
+					returnData.push({ json: {} });
 				}
 			} catch (error: any) {
 				if (this.continueOnFail()) {
