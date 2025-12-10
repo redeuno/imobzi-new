@@ -1,0 +1,16 @@
+{
+  "node": "n8n-nodes-imobzi.imobziWebhook",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": [
+    "Sales",
+    "CRM"
+  ],
+  "resources": {
+    "primaryDocumentation": [
+      {
+        "url": "https://developer.imobzi.com/"
+      }
+    ]
+  }
+} 
