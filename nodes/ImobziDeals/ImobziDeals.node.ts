@@ -49,27 +49,27 @@ export class ImobziDeals implements INodeType {
 						description: 'Gerenciar pipelines de vendas',
 					},
 					{
-						name: 'Grupo de Pipeline',
+						name: 'Grupo De Pipeline',
 						value: 'pipelineGroup',
 						description: 'Gerenciar grupos de pipeline',
 					},
 					{
-						name: 'Campo de Deal',
+						name: 'Campo De Deal',
 						value: 'dealField',
 						description: 'Gerenciar campos customizados de deal',
 					},
 					{
-						name: 'Motivo de Perda',
+						name: 'Motivo De Perda',
 						value: 'dealLostReason',
 						description: 'Gerenciar motivos de perda de deal',
 					},
 					{
-						name: 'Filtro de Deal',
+						name: 'Filtro De Deal',
 						value: 'dealFilter',
 						description: 'Gerenciar filtros salvos de deals',
 					},
 					{
-						name: 'Rotação de Deal',
+						name: 'Rotação De Deal',
 						value: 'dealRotation',
 						description: 'Gerenciar rotação de deals entre usuários',
 					},
@@ -95,7 +95,7 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os deals por estágio',
 						action: 'Listar deals',
@@ -107,7 +107,7 @@ export class ImobziDeals implements INodeType {
 						action: 'Buscar deals',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter deal por ID',
 						action: 'Obter deal por ID',
@@ -134,7 +134,7 @@ export class ImobziDeals implements INodeType {
 						name: 'Obter Imóveis Compatíveis',
 						value: 'getPropertiesMatch',
 						description: 'Obter imóveis compatíveis com o deal',
-						action: 'Obter imóveis compatíveis',
+						action: 'Obter im veis compat veis',
 					},
 					{
 						name: 'Obter Faixas de Valor',
@@ -143,16 +143,16 @@ export class ImobziDeals implements INodeType {
 						action: 'Obter faixas de valor',
 					},
 					{
-						name: 'Obter Faixas de Área',
+						name: 'Obter Faixas De Área',
 						value: 'getRangeAreas',
 						description: 'Obter faixas de áreas para deals',
-						action: 'Obter faixas de área',
+						action: 'Obter faixas de rea',
 					},
 					{
-						name: 'Relatório de Concluídos',
+						name: 'Relatório De Concluídos',
 						value: 'getDealsDone',
 						description: 'Obter relatório de deals concluídos',
-						action: 'Relatório de concluídos',
+						action: 'Relat rio de conclu dos',
 					},
 				],
 				default: 'getAll',
@@ -171,13 +171,13 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os pipelines',
 						action: 'Listar pipelines',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter pipeline por ID',
 						action: 'Obter pipeline',
@@ -217,13 +217,13 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os grupos',
 						action: 'Listar grupos de pipeline',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter grupo por ID',
 						action: 'Obter grupo',
@@ -263,13 +263,13 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os campos',
 						action: 'Listar campos de deal',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter campo por ID',
 						action: 'Obter campo',
@@ -309,13 +309,13 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os motivos',
 						action: 'Listar motivos de perda',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter motivo por ID',
 						action: 'Obter motivo',
@@ -355,13 +355,13 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os filtros',
 						action: 'Listar filtros',
 					},
 					{
-						name: 'Listar Campos de Filtro',
+						name: 'Listar Campos De Filtro',
 						value: 'getFilterFields',
 						description: 'Listar campos disponíveis para filtro',
 						action: 'Listar campos de filtro',
@@ -401,34 +401,34 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as rotações',
-						action: 'Listar rotações',
+						action: 'Listar rota es',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter rotação por ID',
-						action: 'Obter rotação',
+						action: 'Obter rota o',
 					},
 					{
 						name: 'Criar',
 						value: 'create',
 						description: 'Criar nova rotação',
-						action: 'Criar rotação',
+						action: 'Criar rota o',
 					},
 					{
 						name: 'Atualizar',
 						value: 'update',
 						description: 'Atualizar rotação existente',
-						action: 'Atualizar rotação',
+						action: 'Atualizar rota o',
 					},
 					{
 						name: 'Deletar',
 						value: 'delete',
 						description: 'Deletar rotação',
-						action: 'Deletar rotação',
+						action: 'Deletar rota o',
 					},
 				],
 				default: 'getAll',
@@ -447,22 +447,22 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar Propostas de Deal',
+						name: 'Listar Propostas De Deal',
 						value: 'getDealProposals',
 						description: 'Listar propostas de deals',
 						action: 'Listar propostas de deal',
 					},
 					{
-						name: 'Obter Proposta de Deal',
+						name: 'Obter Proposta De Deal',
 						value: 'getDealProposal',
 						description: 'Obter proposta específica de um deal',
 						action: 'Obter proposta de deal',
 					},
 					{
-						name: 'Listar Propostas de Imóvel',
+						name: 'Listar Propostas De Imóvel',
 						value: 'getPropertyProposals',
 						description: 'Listar propostas por imóvel',
-						action: 'Listar propostas de imóvel',
+						action: 'Listar propostas de im vel',
 					},
 				],
 				default: 'getDealProposals',
@@ -470,7 +470,7 @@ export class ImobziDeals implements INodeType {
 
 			// ==================== CAMPOS DE ID ====================
 			{
-				displayName: 'ID do Deal',
+				displayName: 'ID Do Deal',
 				name: 'dealId',
 				type: 'string',
 				required: true,
@@ -484,7 +484,7 @@ export class ImobziDeals implements INodeType {
 				description: 'ID do deal no Imobzi',
 			},
 			{
-				displayName: 'Chave do Deal',
+				displayName: 'Chave Do Deal',
 				name: 'dealKey',
 				type: 'string',
 				required: true,
@@ -498,7 +498,7 @@ export class ImobziDeals implements INodeType {
 				description: 'Chave do deal para proposta',
 			},
 			{
-				displayName: 'ID do Pipeline',
+				displayName: 'ID Do Pipeline',
 				name: 'pipelineId',
 				type: 'string',
 				required: true,
@@ -509,10 +509,9 @@ export class ImobziDeals implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do pipeline',
 			},
 			{
-				displayName: 'ID do Grupo de Pipeline',
+				displayName: 'ID Do Grupo De Pipeline',
 				name: 'pipelineGroupId',
 				type: 'string',
 				required: true,
@@ -523,10 +522,9 @@ export class ImobziDeals implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do grupo de pipeline',
 			},
 			{
-				displayName: 'ID do Campo',
+				displayName: 'ID Do Campo',
 				name: 'fieldId',
 				type: 'string',
 				required: true,
@@ -540,7 +538,7 @@ export class ImobziDeals implements INodeType {
 				description: 'ID do campo de deal',
 			},
 			{
-				displayName: 'ID do Motivo',
+				displayName: 'ID Do Motivo',
 				name: 'reasonId',
 				type: 'string',
 				required: true,
@@ -554,7 +552,7 @@ export class ImobziDeals implements INodeType {
 				description: 'ID do motivo de perda',
 			},
 			{
-				displayName: 'ID do Filtro',
+				displayName: 'ID Do Filtro',
 				name: 'filterId',
 				type: 'string',
 				required: true,
@@ -565,10 +563,9 @@ export class ImobziDeals implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do filtro',
 			},
 			{
-				displayName: 'ID da Rotação',
+				displayName: 'ID Da Rotação',
 				name: 'rotationId',
 				type: 'string',
 				required: true,
@@ -579,7 +576,6 @@ export class ImobziDeals implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da rotação',
 			},
 
 			// ==================== FILTROS PARA DEAL ====================
@@ -597,7 +593,7 @@ export class ImobziDeals implements INodeType {
 				},
 				options: [
 					{
-						displayName: 'ID do Pipeline',
+						displayName: 'ID Do Pipeline',
 						name: 'pipeline_id',
 						type: 'string',
 						default: '',
@@ -617,7 +613,7 @@ export class ImobziDeals implements INodeType {
 						description: 'Status do deal',
 					},
 					{
-						displayName: 'Tipo de Interesse',
+						displayName: 'Tipo De Interesse',
 						name: 'interest_type',
 						type: 'options',
 						options: [
@@ -626,24 +622,22 @@ export class ImobziDeals implements INodeType {
 							{ name: 'Aluguel', value: 'rent' },
 						],
 						default: '',
-						description: 'Tipo de interesse',
 					},
 					{
-						displayName: 'ID do Responsável',
+						displayName: 'ID Do Responsável',
 						name: 'manager_id',
 						type: 'string',
 						default: '',
 						description: 'ID do usuário responsável',
 					},
 					{
-						displayName: 'ID do Contato',
+						displayName: 'ID Do Contato',
 						name: 'contact_id',
 						type: 'string',
 						default: '',
-						description: 'ID do contato',
 					},
 					{
-						displayName: 'Texto de Busca',
+						displayName: 'Texto De Busca',
 						name: 'search',
 						type: 'string',
 						default: '',
@@ -668,14 +662,12 @@ export class ImobziDeals implements INodeType {
 						name: 'start_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data inicial',
 					},
 					{
 						displayName: 'Data Final',
 						name: 'end_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data final',
 					},
 					{
 						displayName: 'Cidade',
@@ -705,7 +697,7 @@ export class ImobziDeals implements INodeType {
 
 			// Deal Create/Update
 			{
-				displayName: 'Dados do Deal',
+				displayName: 'Dados Do Deal',
 				name: 'dealData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -725,28 +717,27 @@ export class ImobziDeals implements INodeType {
 						description: 'Título do deal',
 					},
 					{
-						displayName: 'ID do Contato',
+						displayName: 'ID Do Contato',
 						name: 'contact_id',
 						type: 'string',
 						default: '',
 						description: 'ID do contato associado',
 					},
 					{
-						displayName: 'ID do Pipeline',
+						displayName: 'ID Do Pipeline',
 						name: 'pipeline_id',
 						type: 'string',
 						default: '',
-						description: 'ID do pipeline',
 					},
 					{
-						displayName: 'ID do Estágio',
+						displayName: 'ID Do Estágio',
 						name: 'stage_id',
 						type: 'string',
 						default: '',
 						description: 'ID do estágio no pipeline',
 					},
 					{
-						displayName: 'Tipo de Interesse',
+						displayName: 'Tipo De Interesse',
 						name: 'interest_type',
 						type: 'options',
 						options: [
@@ -754,7 +745,6 @@ export class ImobziDeals implements INodeType {
 							{ name: 'Aluguel', value: 'rent' },
 						],
 						default: 'rent',
-						description: 'Tipo de interesse',
 					},
 					{
 						displayName: 'Valor',
@@ -764,7 +754,7 @@ export class ImobziDeals implements INodeType {
 						description: 'Valor do deal',
 					},
 					{
-						displayName: 'ID do Responsável',
+						displayName: 'ID Do Responsável',
 						name: 'manager_id',
 						type: 'string',
 						default: '',
@@ -778,21 +768,21 @@ export class ImobziDeals implements INodeType {
 						description: 'Origem do deal',
 					},
 					{
-						displayName: 'ID do Imóvel',
+						displayName: 'ID Do Imóvel',
 						name: 'property_id',
 						type: 'string',
 						default: '',
 						description: 'ID do imóvel relacionado',
 					},
 					{
-						displayName: 'Quartos (mínimo)',
+						displayName: 'Quartos (Mínimo)',
 						name: 'min_bedrooms',
 						type: 'number',
 						default: 0,
 						description: 'Número mínimo de quartos desejados',
 					},
 					{
-						displayName: 'Quartos (máximo)',
+						displayName: 'Quartos (Máximo)',
 						name: 'max_bedrooms',
 						type: 'number',
 						default: 0,
@@ -813,14 +803,14 @@ export class ImobziDeals implements INodeType {
 						description: 'Valor máximo de interesse',
 					},
 					{
-						displayName: 'Cidades de Interesse',
+						displayName: 'Cidades De Interesse',
 						name: 'cities',
 						type: 'string',
 						default: '',
 						description: 'Cidades de interesse (separadas por vírgula)',
 					},
 					{
-						displayName: 'Bairros de Interesse',
+						displayName: 'Bairros De Interesse',
 						name: 'neighborhoods',
 						type: 'string',
 						default: '',
@@ -841,7 +831,7 @@ export class ImobziDeals implements INodeType {
 
 			// Pipeline Create/Update
 			{
-				displayName: 'Dados do Pipeline',
+				displayName: 'Dados Do Pipeline',
 				name: 'pipelineData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -889,7 +879,7 @@ export class ImobziDeals implements INodeType {
 						description: 'Whether radar is enabled',
 					},
 					{
-						displayName: 'Reservas do Site',
+						displayName: 'Reservas Do Site',
 						name: 'site_reserves',
 						type: 'boolean',
 						default: false,
@@ -900,7 +890,7 @@ export class ImobziDeals implements INodeType {
 
 			// Pipeline Group Create/Update
 			{
-				displayName: 'Dados do Grupo',
+				displayName: 'Dados Do Grupo',
 				name: 'pipelineGroupData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -931,7 +921,7 @@ export class ImobziDeals implements INodeType {
 
 			// Deal Field Create/Update
 			{
-				displayName: 'Dados do Campo',
+				displayName: 'Dados Do Campo',
 				name: 'fieldData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -976,7 +966,7 @@ export class ImobziDeals implements INodeType {
 
 			// Deal Lost Reason Create/Update
 			{
-				displayName: 'Dados do Motivo',
+				displayName: 'Dados Do Motivo',
 				name: 'reasonData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1007,7 +997,7 @@ export class ImobziDeals implements INodeType {
 
 			// Deal Filter Create/Update
 			{
-				displayName: 'Dados do Filtro',
+				displayName: 'Dados Do Filtro',
 				name: 'filterData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1038,7 +1028,7 @@ export class ImobziDeals implements INodeType {
 
 			// Deal Rotation Create/Update
 			{
-				displayName: 'Dados da Rotação',
+				displayName: 'Dados Da Rotação',
 				name: 'rotationData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1058,7 +1048,7 @@ export class ImobziDeals implements INodeType {
 						description: 'Nome da rotação',
 					},
 					{
-						displayName: 'IDs dos Usuários',
+						displayName: 'IDs Dos Usuários',
 						name: 'user_ids',
 						type: 'string',
 						default: '',
@@ -1101,7 +1091,6 @@ export class ImobziDeals implements INodeType {
 				},
 				typeOptions: {
 					minValue: 1,
-					maxValue: 100,
 				},
 				default: 50,
 				description: 'Max number of results to return',

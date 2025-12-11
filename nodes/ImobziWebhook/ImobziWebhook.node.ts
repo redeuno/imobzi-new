@@ -57,7 +57,7 @@ export class ImobziWebhook implements INodeType {
 					{ name: 'Negócio Criado', value: 'deal.created' },
 					{ name: 'Negócio Atualizado', value: 'deal.updated' },
 					{ name: 'Negócio Deletado', value: 'deal.deleted' },
-					{ name: 'Negócio Movido de Etapa', value: 'deal.stage_changed' },
+					{ name: 'Negócio Movido De Etapa', value: 'deal.stage_changed' },
 					{ name: 'Negócio Ganho', value: 'deal.won' },
 					{ name: 'Negócio Perdido', value: 'deal.lost' },
 					// Contracts
@@ -90,7 +90,7 @@ export class ImobziWebhook implements INodeType {
 					{ name: 'Visita Cancelada', value: 'visit.cancelled' },
 					{ name: 'Visita Realizada', value: 'visit.completed' },
 					// All Events
-					{ name: 'Todos os Eventos', value: '*' },
+					{ name: 'Todos Os Eventos', value: '*' },
 				],
 				default: [],
 				description: 'Selecione os tipos de eventos para acionar o webhook. Deixe vazio para receber todos.',
