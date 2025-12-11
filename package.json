@@ -1,7 +1,7 @@
 {
   "name": "@mantovani.bruno/n8n-nodes-imobzi-new",
-  "version": "1.2.3",
-  "description": "Nodes para integração com a API da Imobzi no n8n - Atualizado para nova API (api.imobzi.app)",
+  "version": "2.0.0",
+  "description": "Nodes modulares para integração completa com a API da Imobzi no n8n - 300 endpoints em 6 módulos",
   "keywords": [
     "n8n-community-node-package",
     "imobzi",
@@ -40,9 +40,13 @@
       "dist/credentials/ImobziApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ImobziSimples/ImobziSimples.node.js",
-      "dist/nodes/Imobzi/Imobzi.node.js",
-      "dist/nodes/ImobziWebhook/ImobziWebhook.node.js"
+      "dist/nodes/ImobziWebhook/ImobziWebhook.node.js",
+      "dist/nodes/ImobziContacts/ImobziContacts.node.js",
+      "dist/nodes/ImobziProperties/ImobziProperties.node.js",
+      "dist/nodes/ImobziDeals/ImobziDeals.node.js",
+      "dist/nodes/ImobziFinancial/ImobziFinancial.node.js",
+      "dist/nodes/ImobziLeases/ImobziLeases.node.js",
+      "dist/nodes/ImobziCore/ImobziCore.node.js"
     ]
   },
   "devDependencies": {

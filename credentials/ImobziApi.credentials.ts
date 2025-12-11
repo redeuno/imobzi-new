@@ -8,7 +8,6 @@ import type {
 export class ImobziApi implements ICredentialType {
 	name = 'imobziApi';
 	displayName = 'Imobzi API';
-
 	documentationUrl = 'https://developer.imobzi.com/';
 
 	properties: INodeProperties[] = [
@@ -20,7 +19,15 @@ export class ImobziApi implements ICredentialType {
 				password: true,
 			},
 			default: '',
-			description: 'Sua chave de API da Imobzi',
+			required: true,
+			description: 'Sua chave de API da Imobzi (X-Imobzi-Secret)',
+		},
+		{
+			displayName: 'Base URL',
+			name: 'baseUrl',
+			type: 'string',
+			default: 'https://api.imobzi.app',
+			description: 'URL base da API Imobzi',
 		},
 	];
 
@@ -36,9 +43,9 @@ export class ImobziApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://api.imobzi.app',
-			url: '/v1/properties',
+			baseURL: '={{$credentials.baseUrl || "https://api.imobzi.app"}}',
+			url: '/v1/users',
 			method: 'GET',
 		},
 	};
-} 
+}
