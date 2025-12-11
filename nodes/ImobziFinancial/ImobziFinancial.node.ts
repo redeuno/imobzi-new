@@ -54,12 +54,12 @@ export class ImobziFinancial implements INodeType {
 						description: 'Gerenciar categorias financeiras',
 					},
 					{
-						name: 'Conta de Proprietário',
+						name: 'Conta De Proprietário',
 						value: 'landlordAccount',
 						description: 'Consultar contas de proprietários',
 					},
 					{
-						name: 'Transação de Proprietário',
+						name: 'Transação De Proprietário',
 						value: 'landlordTransaction',
 						description: 'Gerenciar transações de proprietários',
 					},
@@ -105,13 +105,13 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as contas',
 						action: 'Listar contas',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter conta por ID',
 						action: 'Obter conta',
@@ -151,34 +151,34 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as transações',
-						action: 'Listar transações',
+						action: 'Listar transa es',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter transação por ID',
-						action: 'Obter transação',
+						action: 'Obter transa o',
 					},
 					{
 						name: 'Criar',
 						value: 'create',
 						description: 'Criar nova transação',
-						action: 'Criar transação',
+						action: 'Criar transa o',
 					},
 					{
 						name: 'Atualizar',
 						value: 'update',
 						description: 'Atualizar transação existente',
-						action: 'Atualizar transação',
+						action: 'Atualizar transa o',
 					},
 					{
 						name: 'Deletar',
 						value: 'delete',
 						description: 'Deletar transação',
-						action: 'Deletar transação',
+						action: 'Deletar transa o',
 					},
 					{
 						name: 'Adicionar Anexo',
@@ -190,7 +190,7 @@ export class ImobziFinancial implements INodeType {
 						name: 'Conciliação',
 						value: 'match',
 						description: 'Conciliar transações',
-						action: 'Conciliar transações',
+						action: 'Conciliar transa es',
 					},
 				],
 				default: 'getAll',
@@ -209,13 +209,13 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as categorias',
 						action: 'Listar categorias',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter categoria por ID',
 						action: 'Obter categoria',
@@ -255,16 +255,16 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar contas de proprietários',
-						action: 'Listar contas de proprietários',
+						action: 'Listar contas de propriet rios',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter conta de proprietário por ID',
-						action: 'Obter conta de proprietário',
+						action: 'Obter conta de propriet rio',
 					},
 				],
 				default: 'getAll',
@@ -283,10 +283,10 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar transações de proprietário',
-						action: 'Listar transações de proprietário',
+						action: 'Listar transa es de propriet rio',
 					},
 					{
 						name: 'Obter Repasse',
@@ -311,13 +311,13 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as faturas',
 						action: 'Listar faturas',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter fatura por ID',
 						action: 'Obter fatura',
@@ -338,7 +338,7 @@ export class ImobziFinancial implements INodeType {
 						name: 'Enviar Notificação',
 						value: 'sendNotification',
 						description: 'Enviar notificação da fatura',
-						action: 'Enviar notificação',
+						action: 'Enviar notifica o',
 					},
 				],
 				default: 'getAll',
@@ -357,13 +357,13 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as notas fiscais',
 						action: 'Listar notas fiscais',
 					},
 					{
-						name: 'Obter por Chave',
+						name: 'Obter Por Chave',
 						value: 'get',
 						description: 'Obter nota fiscal por chave',
 						action: 'Obter nota fiscal',
@@ -387,16 +387,16 @@ export class ImobziFinancial implements INodeType {
 						action: 'Deletar nota fiscal',
 					},
 					{
-						name: 'Enviar por Email',
+						name: 'Enviar Por Email',
 						value: 'sendEmail',
 						description: 'Enviar nota fiscal por email',
 						action: 'Enviar por email',
 					},
 					{
-						name: 'Transações do Proprietário',
+						name: 'Transações Do Proprietário',
 						value: 'getLandlordTransactions',
 						description: 'Listar transações do proprietário para NF',
-						action: 'Transações do proprietário',
+						action: 'Transa es do propriet rio',
 					},
 				],
 				default: 'getAll',
@@ -415,13 +415,13 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os bancos',
 						action: 'Listar bancos',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter banco por ID',
 						action: 'Obter banco',
@@ -449,7 +449,7 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as tags',
 						action: 'Listar tags financeiras',
@@ -471,10 +471,10 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						name: 'Obter Repasse de Comissão',
+						name: 'Obter Repasse De Comissão',
 						value: 'getOnlending',
 						description: 'Obter recibo de repasse de comissão',
-						action: 'Obter repasse de comissão',
+						action: 'Obter repasse de comiss o',
 					},
 				],
 				default: 'getOnlending',
@@ -482,7 +482,7 @@ export class ImobziFinancial implements INodeType {
 
 			// ==================== CAMPOS DE ID ====================
 			{
-				displayName: 'ID da Conta',
+				displayName: 'ID Da Conta',
 				name: 'accountId',
 				type: 'string',
 				required: true,
@@ -496,7 +496,7 @@ export class ImobziFinancial implements INodeType {
 				description: 'ID da conta financeira',
 			},
 			{
-				displayName: 'ID da Transação',
+				displayName: 'ID Da Transação',
 				name: 'transactionId',
 				type: 'string',
 				required: true,
@@ -507,10 +507,9 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da transação',
 			},
 			{
-				displayName: 'ID da Categoria',
+				displayName: 'ID Da Categoria',
 				name: 'categoryId',
 				type: 'string',
 				required: true,
@@ -521,10 +520,9 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da categoria',
 			},
 			{
-				displayName: 'ID da Conta de Proprietário',
+				displayName: 'ID Da Conta De Proprietário',
 				name: 'landlordAccountId',
 				type: 'string',
 				required: true,
@@ -535,10 +533,9 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da conta de proprietário',
 			},
 			{
-				displayName: 'ID da Conta de Proprietário',
+				displayName: 'ID Da Conta De Proprietário',
 				name: 'landlordAccountId',
 				type: 'string',
 				required: true,
@@ -549,10 +546,9 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da conta de proprietário',
 			},
 			{
-				displayName: 'ID da Transação do Proprietário',
+				displayName: 'ID Da Transação Do Proprietário',
 				name: 'landlordTransactionId',
 				type: 'string',
 				required: true,
@@ -563,10 +559,9 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da transação do proprietário',
 			},
 			{
-				displayName: 'ID da Fatura',
+				displayName: 'ID Da Fatura',
 				name: 'invoiceId',
 				type: 'string',
 				required: true,
@@ -577,10 +572,9 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da fatura',
 			},
 			{
-				displayName: 'Chave da Nota Fiscal',
+				displayName: 'Chave Da Nota Fiscal',
 				name: 'notaFiscalKey',
 				type: 'string',
 				required: true,
@@ -591,10 +585,9 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Chave da nota fiscal',
 			},
 			{
-				displayName: 'ID da Conta de Proprietário',
+				displayName: 'ID Da Conta De Proprietário',
 				name: 'landlordAccountId',
 				type: 'string',
 				required: true,
@@ -605,10 +598,9 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da conta de proprietário',
 			},
 			{
-				displayName: 'ID do Banco',
+				displayName: 'ID Do Banco',
 				name: 'bankId',
 				type: 'string',
 				required: true,
@@ -619,7 +611,6 @@ export class ImobziFinancial implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do banco',
 			},
 
 			// ==================== FILTROS ====================
@@ -637,7 +628,7 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						displayName: 'ID da Conta',
+						displayName: 'ID Da Conta',
 						name: 'account_id',
 						type: 'string',
 						default: '',
@@ -656,7 +647,7 @@ export class ImobziFinancial implements INodeType {
 						description: 'Tipo de transação',
 					},
 					{
-						displayName: 'Status de Pagamento',
+						displayName: 'Status De Pagamento',
 						name: 'paid',
 						type: 'options',
 						options: [
@@ -665,7 +656,6 @@ export class ImobziFinancial implements INodeType {
 							{ name: 'Pendente', value: 'false' },
 						],
 						default: '',
-						description: 'Status de pagamento',
 					},
 					{
 						displayName: 'Categoria',
@@ -679,17 +669,15 @@ export class ImobziFinancial implements INodeType {
 						name: 'start_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data inicial',
 					},
 					{
 						displayName: 'Data Final',
 						name: 'end_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data final',
 					},
 					{
-						displayName: 'Texto de Busca',
+						displayName: 'Texto De Busca',
 						name: 'search',
 						type: 'string',
 						default: '',
@@ -725,28 +713,28 @@ export class ImobziFinancial implements INodeType {
 						description: 'Status da fatura',
 					},
 					{
-						displayName: 'ID do Contrato',
+						displayName: 'ID Do Contrato',
 						name: 'contract_id',
 						type: 'string',
 						default: '',
 						description: 'Filtrar por contrato',
 					},
 					{
-						displayName: 'ID da Locação',
+						displayName: 'ID Da Locação',
 						name: 'lease_id',
 						type: 'string',
 						default: '',
 						description: 'Filtrar por locação',
 					},
 					{
-						displayName: 'Data de Vencimento (Início)',
+						displayName: 'Data De Vencimento (Início)',
 						name: 'due_date_start',
 						type: 'dateTime',
 						default: '',
 						description: 'Vencimento a partir de',
 					},
 					{
-						displayName: 'Data de Vencimento (Fim)',
+						displayName: 'Data De Vencimento (Fim)',
 						name: 'due_date_end',
 						type: 'dateTime',
 						default: '',
@@ -785,14 +773,12 @@ export class ImobziFinancial implements INodeType {
 						name: 'start_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data inicial',
 					},
 					{
 						displayName: 'Data Final',
 						name: 'end_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data final',
 					},
 				],
 			},
@@ -801,7 +787,7 @@ export class ImobziFinancial implements INodeType {
 
 			// Account Data
 			{
-				displayName: 'Dados da Conta',
+				displayName: 'Dados Da Conta',
 				name: 'accountData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -828,7 +814,7 @@ export class ImobziFinancial implements INodeType {
 						description: 'Descrição da conta',
 					},
 					{
-						displayName: 'Tipo de Conta',
+						displayName: 'Tipo De Conta',
 						name: 'account_type',
 						type: 'options',
 						options: [
@@ -855,11 +841,10 @@ export class ImobziFinancial implements INodeType {
 						description: 'Número da agência',
 					},
 					{
-						displayName: 'Número da Conta',
+						displayName: 'Número Da Conta',
 						name: 'account_number',
 						type: 'string',
 						default: '',
-						description: 'Número da conta',
 					},
 					{
 						displayName: 'Saldo Inicial',
@@ -887,7 +872,7 @@ export class ImobziFinancial implements INodeType {
 
 			// Transaction Data
 			{
-				displayName: 'Dados da Transação',
+				displayName: 'Dados Da Transação',
 				name: 'transactionData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -914,11 +899,10 @@ export class ImobziFinancial implements INodeType {
 						description: 'Valor da transação (negativo para despesa)',
 					},
 					{
-						displayName: 'ID da Conta',
+						displayName: 'ID Da Conta',
 						name: 'account_id',
 						type: 'string',
 						default: '',
-						description: 'ID da conta',
 					},
 					{
 						displayName: 'Categoria',
@@ -935,11 +919,10 @@ export class ImobziFinancial implements INodeType {
 						description: 'Subcategoria da transação',
 					},
 					{
-						displayName: 'Data de Vencimento',
+						displayName: 'Data De Vencimento',
 						name: 'due_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data de vencimento',
 					},
 					{
 						displayName: 'Pago',
@@ -949,14 +932,13 @@ export class ImobziFinancial implements INodeType {
 						description: 'Whether the transaction is paid',
 					},
 					{
-						displayName: 'Data do Pagamento',
+						displayName: 'Data Do Pagamento',
 						name: 'paid_at',
 						type: 'dateTime',
 						default: '',
-						description: 'Data do pagamento',
 					},
 					{
-						displayName: 'Tipo de Repetição',
+						displayName: 'Tipo De Repetição',
 						name: 'repeat_type',
 						type: 'options',
 						options: [
@@ -965,7 +947,6 @@ export class ImobziFinancial implements INodeType {
 							{ name: 'Parcelada', value: 'installment' },
 						],
 						default: 'single',
-						description: 'Tipo de repetição',
 					},
 					{
 						displayName: 'Observações',
@@ -979,7 +960,7 @@ export class ImobziFinancial implements INodeType {
 
 			// Category Data
 			{
-				displayName: 'Dados da Categoria',
+				displayName: 'Dados Da Categoria',
 				name: 'categoryData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1021,7 +1002,7 @@ export class ImobziFinancial implements INodeType {
 
 			// Invoice Data
 			{
-				displayName: 'Dados da Fatura',
+				displayName: 'Dados Da Fatura',
 				name: 'invoiceData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1034,11 +1015,10 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						displayName: 'ID da Locação',
+						displayName: 'ID Da Locação',
 						name: 'lease_id',
 						type: 'string',
 						default: '',
-						description: 'ID da locação',
 					},
 					{
 						displayName: 'Valor',
@@ -1048,11 +1028,10 @@ export class ImobziFinancial implements INodeType {
 						description: 'Valor da fatura',
 					},
 					{
-						displayName: 'Data de Vencimento',
+						displayName: 'Data De Vencimento',
 						name: 'due_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data de vencimento',
 					},
 					{
 						displayName: 'Descrição',
@@ -1078,7 +1057,7 @@ export class ImobziFinancial implements INodeType {
 
 			// Nota Fiscal Data
 			{
-				displayName: 'Dados da Nota Fiscal',
+				displayName: 'Dados Da Nota Fiscal',
 				name: 'notaFiscalData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1091,11 +1070,10 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						displayName: 'ID do Proprietário',
+						displayName: 'ID Do Proprietário',
 						name: 'landlord_id',
 						type: 'string',
 						default: '',
-						description: 'ID do proprietário',
 					},
 					{
 						displayName: 'Valor',
@@ -1105,25 +1083,23 @@ export class ImobziFinancial implements INodeType {
 						description: 'Valor da nota fiscal',
 					},
 					{
-						displayName: 'Descrição do Serviço',
+						displayName: 'Descrição Do Serviço',
 						name: 'service_description',
 						type: 'string',
 						default: '',
-						description: 'Descrição do serviço',
 					},
 					{
-						displayName: 'Data de Emissão',
+						displayName: 'Data De Emissão',
 						name: 'issue_date',
 						type: 'dateTime',
 						default: '',
-						description: 'Data de emissão',
 					},
 				],
 			},
 
 			// Bank Data
 			{
-				displayName: 'Dados do Banco',
+				displayName: 'Dados Do Banco',
 				name: 'bankData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1154,7 +1130,7 @@ export class ImobziFinancial implements INodeType {
 
 			// Attachment Data
 			{
-				displayName: 'Dados do Anexo',
+				displayName: 'Dados Do Anexo',
 				name: 'attachmentData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1167,25 +1143,23 @@ export class ImobziFinancial implements INodeType {
 				},
 				options: [
 					{
-						displayName: 'ID da Transação',
+						displayName: 'ID Da Transação',
 						name: 'transaction_id',
 						type: 'string',
 						default: '',
-						description: 'ID da transação',
 					},
 					{
-						displayName: 'URL do Arquivo',
+						displayName: 'URL Do Arquivo',
 						name: 'file_url',
 						type: 'string',
 						default: '',
 						description: 'URL do arquivo anexo',
 					},
 					{
-						displayName: 'Nome do Arquivo',
+						displayName: 'Nome Do Arquivo',
 						name: 'file_name',
 						type: 'string',
 						default: '',
-						description: 'Nome do arquivo',
 					},
 				],
 			},
@@ -1217,7 +1191,6 @@ export class ImobziFinancial implements INodeType {
 				},
 				typeOptions: {
 					minValue: 1,
-					maxValue: 100,
 				},
 				default: 50,
 				description: 'Max number of results to return',

@@ -59,7 +59,7 @@ export class ImobziContacts implements INodeType {
 						description: 'Gerenciar empresas/organizações',
 					},
 					{
-						name: 'Tag de Contato',
+						name: 'Tag De Contato',
 						value: 'contactTag',
 						description: 'Gerenciar tags de contatos',
 					},
@@ -90,7 +90,7 @@ export class ImobziContacts implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os contatos',
 						action: 'Listar contatos',
@@ -108,7 +108,7 @@ export class ImobziContacts implements INodeType {
 						action: 'Verificar se contato existe',
 					},
 					{
-						name: 'Obter Foto de Perfil',
+						name: 'Obter Foto De Perfil',
 						value: 'getProfilePicture',
 						description: 'Obter foto de perfil por email',
 						action: 'Obter foto de perfil',
@@ -117,7 +117,7 @@ export class ImobziContacts implements INodeType {
 						name: 'Obter Dados Bancários',
 						value: 'getBankData',
 						description: 'Obter dados bancários do contato',
-						action: 'Obter dados bancários',
+						action: 'Obter dados banc rios',
 					},
 				],
 				default: 'getAll',
@@ -142,16 +142,16 @@ export class ImobziContacts implements INodeType {
 						action: 'Criar pessoa',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter pessoa por ID',
 						action: 'Obter pessoa por ID',
 					},
 					{
-						name: 'Obter por Código',
+						name: 'Obter Por Código',
 						value: 'getByCode',
 						description: 'Obter pessoa por código',
-						action: 'Obter pessoa por código',
+						action: 'Obter pessoa por c digo',
 					},
 					{
 						name: 'Atualizar',
@@ -191,19 +191,19 @@ export class ImobziContacts implements INodeType {
 						name: 'Criar via Integração',
 						value: 'createIntegration',
 						description: 'Criar lead via integração externa',
-						action: 'Criar lead via integração',
+						action: 'Criar lead via integra o',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter lead por ID',
 						action: 'Obter lead por ID',
 					},
 					{
-						name: 'Obter por Código',
+						name: 'Obter Por Código',
 						value: 'getByCode',
 						description: 'Obter lead por código',
-						action: 'Obter lead por código',
+						action: 'Obter lead por c digo',
 					},
 					{
 						name: 'Atualizar',
@@ -237,31 +237,31 @@ export class ImobziContacts implements INodeType {
 						name: 'Criar',
 						value: 'create',
 						description: 'Criar nova organização',
-						action: 'Criar organização',
+						action: 'Criar organiza o',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter organização por ID',
-						action: 'Obter organização por ID',
+						action: 'Obter organiza o por id',
 					},
 					{
-						name: 'Obter por Código',
+						name: 'Obter Por Código',
 						value: 'getByCode',
 						description: 'Obter organização por código',
-						action: 'Obter organização por código',
+						action: 'Obter organiza o por c digo',
 					},
 					{
 						name: 'Atualizar',
 						value: 'update',
 						description: 'Atualizar organização existente',
-						action: 'Atualizar organização',
+						action: 'Atualizar organiza o',
 					},
 					{
 						name: 'Deletar',
 						value: 'delete',
 						description: 'Deletar organização',
-						action: 'Deletar organização',
+						action: 'Deletar organiza o',
 					},
 				],
 				default: 'get',
@@ -280,7 +280,7 @@ export class ImobziContacts implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as tags',
 						action: 'Listar tags',
@@ -292,7 +292,7 @@ export class ImobziContacts implements INodeType {
 						action: 'Criar tag',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter tag por ID',
 						action: 'Obter tag por ID',
@@ -326,7 +326,7 @@ export class ImobziContacts implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os campos',
 						action: 'Listar campos de pessoa',
@@ -338,7 +338,7 @@ export class ImobziContacts implements INodeType {
 						action: 'Criar campo de pessoa',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter campo por ID',
 						action: 'Obter campo de pessoa',
@@ -372,34 +372,34 @@ export class ImobziContacts implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os campos',
-						action: 'Listar campos de organização',
+						action: 'Listar campos de organiza o',
 					},
 					{
 						name: 'Criar',
 						value: 'create',
 						description: 'Criar novo campo',
-						action: 'Criar campo de organização',
+						action: 'Criar campo de organiza o',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter campo por ID',
-						action: 'Obter campo de organização',
+						action: 'Obter campo de organiza o',
 					},
 					{
 						name: 'Atualizar',
 						value: 'update',
 						description: 'Atualizar campo existente',
-						action: 'Atualizar campo de organização',
+						action: 'Atualizar campo de organiza o',
 					},
 					{
 						name: 'Deletar',
 						value: 'delete',
 						description: 'Deletar campo',
-						action: 'Deletar campo de organização',
+						action: 'Deletar campo de organiza o',
 					},
 				],
 				default: 'getAll',
@@ -409,7 +409,7 @@ export class ImobziContacts implements INodeType {
 
 			// ID fields
 			{
-				displayName: 'ID da Pessoa',
+				displayName: 'ID Da Pessoa',
 				name: 'personId',
 				type: 'string',
 				required: true,
@@ -423,7 +423,7 @@ export class ImobziContacts implements INodeType {
 				description: 'ID da pessoa no Imobzi',
 			},
 			{
-				displayName: 'Código da Pessoa',
+				displayName: 'Código Da Pessoa',
 				name: 'personCode',
 				type: 'string',
 				required: true,
@@ -437,7 +437,7 @@ export class ImobziContacts implements INodeType {
 				description: 'Código da pessoa no Imobzi',
 			},
 			{
-				displayName: 'ID do Lead',
+				displayName: 'ID Do Lead',
 				name: 'leadId',
 				type: 'string',
 				required: true,
@@ -451,7 +451,7 @@ export class ImobziContacts implements INodeType {
 				description: 'ID do lead no Imobzi',
 			},
 			{
-				displayName: 'Código do Lead',
+				displayName: 'Código Do Lead',
 				name: 'leadCode',
 				type: 'string',
 				required: true,
@@ -465,7 +465,7 @@ export class ImobziContacts implements INodeType {
 				description: 'Código do lead no Imobzi',
 			},
 			{
-				displayName: 'ID da Organização',
+				displayName: 'ID Da Organização',
 				name: 'organizationId',
 				type: 'string',
 				required: true,
@@ -479,7 +479,7 @@ export class ImobziContacts implements INodeType {
 				description: 'ID da organização no Imobzi',
 			},
 			{
-				displayName: 'Código da Organização',
+				displayName: 'Código Da Organização',
 				name: 'organizationCode',
 				type: 'string',
 				required: true,
@@ -493,7 +493,7 @@ export class ImobziContacts implements INodeType {
 				description: 'Código da organização no Imobzi',
 			},
 			{
-				displayName: 'ID da Tag',
+				displayName: 'ID Da Tag',
 				name: 'tagId',
 				type: 'string',
 				required: true,
@@ -507,7 +507,7 @@ export class ImobziContacts implements INodeType {
 				description: 'ID da tag no Imobzi',
 			},
 			{
-				displayName: 'ID do Campo',
+				displayName: 'ID Do Campo',
 				name: 'fieldId',
 				type: 'string',
 				required: true,
@@ -521,7 +521,7 @@ export class ImobziContacts implements INodeType {
 				description: 'ID do campo personalizado no Imobzi',
 			},
 			{
-				displayName: 'ID do Contato',
+				displayName: 'ID Do Contato',
 				name: 'contactId',
 				type: 'string',
 				required: true,
@@ -535,7 +535,7 @@ export class ImobziContacts implements INodeType {
 				description: 'ID do contato no Imobzi',
 			},
 			{
-				displayName: 'Tipo do Contato',
+				displayName: 'Tipo Do Contato',
 				name: 'contactType',
 				type: 'options',
 				required: true,
@@ -550,7 +550,6 @@ export class ImobziContacts implements INodeType {
 					{ name: 'Organização', value: 'organization' },
 				],
 				default: 'person',
-				description: 'Tipo do contato',
 			},
 
 			// Email para foto de perfil
@@ -620,7 +619,7 @@ export class ImobziContacts implements INodeType {
 				},
 				options: [
 					{
-						displayName: 'Tipo de Contato',
+						displayName: 'Tipo De Contato',
 						name: 'contact_type',
 						type: 'options',
 						options: [
@@ -647,14 +646,14 @@ export class ImobziContacts implements INodeType {
 						description: 'Filtrar por tags (separadas por vírgula)',
 					},
 					{
-						displayName: 'Texto de Busca',
+						displayName: 'Texto De Busca',
 						name: 'search_text',
 						type: 'string',
 						default: '',
 						description: 'Texto para buscar nos contatos',
 					},
 					{
-						displayName: 'ID do Gerente',
+						displayName: 'ID Do Gerente',
 						name: 'manager_id',
 						type: 'string',
 						default: '',
@@ -706,7 +705,7 @@ export class ImobziContacts implements INodeType {
 
 			// Person Create/Update
 			{
-				displayName: 'Dados da Pessoa',
+				displayName: 'Dados Da Pessoa',
 				name: 'personData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -729,6 +728,7 @@ export class ImobziContacts implements INodeType {
 						displayName: 'Email',
 						name: 'email',
 						type: 'string',
+						placeholder: 'name@email.com',
 						default: '',
 						description: 'Email principal',
 					},
@@ -754,11 +754,10 @@ export class ImobziContacts implements INodeType {
 						description: 'RG da pessoa',
 					},
 					{
-						displayName: 'Data de Nascimento',
+						displayName: 'Data De Nascimento',
 						name: 'birthday',
 						type: 'dateTime',
 						default: '',
-						description: 'Data de nascimento',
 					},
 					{
 						displayName: 'Profissão',
@@ -779,14 +778,12 @@ export class ImobziContacts implements INodeType {
 							{ name: 'União Estável', value: 'stable_union' },
 						],
 						default: 'single',
-						description: 'Estado civil',
 					},
 					{
 						displayName: 'Nacionalidade',
 						name: 'nationality',
 						type: 'string',
 						default: 'Brasileiro(a)',
-						description: 'Nacionalidade',
 					},
 					{
 						displayName: 'Endereço',
@@ -800,7 +797,6 @@ export class ImobziContacts implements INodeType {
 						name: 'city',
 						type: 'string',
 						default: '',
-						description: 'Cidade',
 					},
 					{
 						displayName: 'Estado',
@@ -814,7 +810,6 @@ export class ImobziContacts implements INodeType {
 						name: 'zipcode',
 						type: 'string',
 						default: '',
-						description: 'CEP',
 					},
 					{
 						displayName: 'Tags',
@@ -838,7 +833,7 @@ export class ImobziContacts implements INodeType {
 
 			// Lead Create/Update
 			{
-				displayName: 'Dados do Lead',
+				displayName: 'Dados Do Lead',
 				name: 'leadData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -861,6 +856,7 @@ export class ImobziContacts implements INodeType {
 						displayName: 'Email',
 						name: 'email',
 						type: 'string',
+						placeholder: 'name@email.com',
 						default: '',
 						description: 'Email do lead',
 					},
@@ -885,7 +881,7 @@ export class ImobziContacts implements INodeType {
 						options: [
 							{ name: 'Compra', value: 'buy' },
 							{ name: 'Aluguel', value: 'rent' },
-							{ name: 'Compra ou Aluguel', value: 'both' },
+							{ name: 'Compra Ou Aluguel', value: 'both' },
 						],
 						default: 'rent',
 						description: 'Tipo de interesse',
@@ -901,21 +897,21 @@ export class ImobziContacts implements INodeType {
 						description: 'Mensagem ou observações do lead',
 					},
 					{
-						displayName: 'ID do Imóvel',
+						displayName: 'ID Do Imóvel',
 						name: 'property_id',
 						type: 'string',
 						default: '',
 						description: 'ID do imóvel de interesse',
 					},
 					{
-						displayName: 'ID do Pipeline',
+						displayName: 'ID Do Pipeline',
 						name: 'pipeline_id',
 						type: 'string',
 						default: '',
 						description: 'ID do pipeline para o lead',
 					},
 					{
-						displayName: 'ID do Responsável',
+						displayName: 'ID Do Responsável',
 						name: 'manager_id',
 						type: 'string',
 						default: '',
@@ -926,7 +922,7 @@ export class ImobziContacts implements INodeType {
 
 			// Organization Create/Update
 			{
-				displayName: 'Dados da Organização',
+				displayName: 'Dados Da Organização',
 				name: 'organizationData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -950,7 +946,6 @@ export class ImobziContacts implements INodeType {
 						name: 'trade_name',
 						type: 'string',
 						default: '',
-						description: 'Nome fantasia',
 					},
 					{
 						displayName: 'CNPJ',
@@ -963,6 +958,7 @@ export class ImobziContacts implements INodeType {
 						displayName: 'Email',
 						name: 'email',
 						type: 'string',
+						placeholder: 'name@email.com',
 						default: '',
 						description: 'Email principal',
 					},
@@ -985,7 +981,6 @@ export class ImobziContacts implements INodeType {
 						name: 'city',
 						type: 'string',
 						default: '',
-						description: 'Cidade',
 					},
 					{
 						displayName: 'Estado',
@@ -999,21 +994,18 @@ export class ImobziContacts implements INodeType {
 						name: 'zipcode',
 						type: 'string',
 						default: '',
-						description: 'CEP',
 					},
 					{
 						displayName: 'Inscrição Estadual',
 						name: 'state_registration',
 						type: 'string',
 						default: '',
-						description: 'Inscrição estadual',
 					},
 					{
 						displayName: 'Inscrição Municipal',
 						name: 'municipal_registration',
 						type: 'string',
 						default: '',
-						description: 'Inscrição municipal',
 					},
 					{
 						displayName: 'Observações',
@@ -1030,7 +1022,7 @@ export class ImobziContacts implements INodeType {
 
 			// Tag Create/Update
 			{
-				displayName: 'Dados da Tag',
+				displayName: 'Dados Da Tag',
 				name: 'tagData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1061,7 +1053,7 @@ export class ImobziContacts implements INodeType {
 
 			// Field Create/Update
 			{
-				displayName: 'Dados do Campo',
+				displayName: 'Dados Do Campo',
 				name: 'fieldData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1103,7 +1095,7 @@ export class ImobziContacts implements INodeType {
 						description: 'Whether the field is required',
 					},
 					{
-						displayName: 'Opções (para select/multiselect)',
+						displayName: 'Opções (Para Select/multiselect)',
 						name: 'options',
 						type: 'string',
 						default: '',
@@ -1139,7 +1131,6 @@ export class ImobziContacts implements INodeType {
 				},
 				typeOptions: {
 					minValue: 1,
-					maxValue: 100,
 				},
 				default: 50,
 				description: 'Max number of results to return',

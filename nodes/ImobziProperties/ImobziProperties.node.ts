@@ -44,7 +44,7 @@ export class ImobziProperties implements INodeType {
 						description: 'Gerenciar imóveis',
 					},
 					{
-						name: 'Tipo de Imóvel',
+						name: 'Tipo De Imóvel',
 						value: 'propertyType',
 						description: 'Gerenciar tipos de imóveis',
 					},
@@ -105,73 +105,73 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os imóveis',
-						action: 'Listar imóveis',
+						action: 'Listar im veis',
 					},
 					{
 						name: 'Buscar',
 						value: 'search',
 						description: 'Buscar imóveis com filtros',
-						action: 'Buscar imóveis',
+						action: 'Buscar im veis',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter imóvel por ID',
-						action: 'Obter imóvel por ID',
+						action: 'Obter im vel por id',
 					},
 					{
-						name: 'Obter por Código',
+						name: 'Obter Por Código',
 						value: 'getByCode',
 						description: 'Obter imóvel por código',
-						action: 'Obter imóvel por código',
+						action: 'Obter im vel por c digo',
 					},
 					{
 						name: 'Criar',
 						value: 'create',
 						description: 'Criar novo imóvel',
-						action: 'Criar imóvel',
+						action: 'Criar im vel',
 					},
 					{
 						name: 'Atualizar',
 						value: 'update',
 						description: 'Atualizar imóvel existente',
-						action: 'Atualizar imóvel',
+						action: 'Atualizar im vel',
 					},
 					{
 						name: 'Deletar',
 						value: 'delete',
 						description: 'Deletar imóvel',
-						action: 'Deletar imóvel',
+						action: 'Deletar im vel',
 					},
 					{
 						name: 'Verificar Existência',
 						value: 'exists',
 						description: 'Verificar se imóvel existe',
-						action: 'Verificar existência',
+						action: 'Verificar exist ncia',
 					},
 					{
 						name: 'Obter Estatísticas',
 						value: 'getStatistics',
 						description: 'Obter estatísticas do imóvel',
-						action: 'Obter estatísticas',
+						action: 'Obter estat sticas',
 					},
 					{
 						name: 'Obter Calendário',
 						value: 'getCalendar',
 						description: 'Obter calendário do imóvel',
-						action: 'Obter calendário',
+						action: 'Obter calend rio',
 					},
 					{
-						name: 'Buscar por Mapa',
+						name: 'Buscar Por Mapa',
 						value: 'getByMap',
 						description: 'Buscar imóveis por geolocalização',
 						action: 'Buscar por mapa',
 					},
 					{
-						name: 'Match com Deals',
+						name: 'Match Com Deals',
 						value: 'getDealsMatch',
 						description: 'Obter deals compatíveis com o imóvel',
 						action: 'Match com deals',
@@ -193,13 +193,13 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os tipos',
-						action: 'Listar tipos de imóvel',
+						action: 'Listar tipos de im vel',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter tipo por ID',
 						action: 'Obter tipo por ID',
@@ -239,34 +239,34 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as características',
-						action: 'Listar características',
+						action: 'Listar caracter sticas',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter característica por ID',
-						action: 'Obter característica por ID',
+						action: 'Obter caracter stica por id',
 					},
 					{
 						name: 'Criar',
 						value: 'create',
 						description: 'Criar nova característica',
-						action: 'Criar característica',
+						action: 'Criar caracter stica',
 					},
 					{
 						name: 'Atualizar',
 						value: 'update',
 						description: 'Atualizar característica existente',
-						action: 'Atualizar característica',
+						action: 'Atualizar caracter stica',
 					},
 					{
 						name: 'Deletar',
 						value: 'delete',
 						description: 'Deletar característica',
-						action: 'Deletar característica',
+						action: 'Deletar caracter stica',
 					},
 				],
 				default: 'getAll',
@@ -285,13 +285,13 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os campos',
 						action: 'Listar campos',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter campo por ID',
 						action: 'Obter campo por ID',
@@ -365,34 +365,34 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os anúncios',
-						action: 'Listar anúncios',
+						action: 'Listar an ncios',
 					},
 					{
 						name: 'Obter',
 						value: 'get',
 						description: 'Obter anúncio por chave',
-						action: 'Obter anúncio',
+						action: 'Obter an ncio',
 					},
 					{
 						name: 'Criar',
 						value: 'create',
 						description: 'Criar novo anúncio',
-						action: 'Criar anúncio',
+						action: 'Criar an ncio',
 					},
 					{
 						name: 'Atualizar',
 						value: 'update',
 						description: 'Atualizar anúncio existente',
-						action: 'Atualizar anúncio',
+						action: 'Atualizar an ncio',
 					},
 					{
 						name: 'Deletar',
 						value: 'delete',
 						description: 'Deletar anúncio',
-						action: 'Deletar anúncio',
+						action: 'Deletar an ncio',
 					},
 				],
 				default: 'getAll',
@@ -411,13 +411,13 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as reservas',
 						action: 'Listar reservas',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter reserva por ID',
 						action: 'Obter reserva',
@@ -457,13 +457,13 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os bairros',
 						action: 'Listar bairros',
 					},
 					{
-						name: 'Obter por ID',
+						name: 'Obter Por ID',
 						value: 'get',
 						description: 'Obter bairro por ID',
 						action: 'Obter bairro',
@@ -503,7 +503,7 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todas as cidades',
 						action: 'Listar cidades',
@@ -525,7 +525,7 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						name: 'Listar',
+						name: 'Get Many',
 						value: 'getAll',
 						description: 'Listar todos os estados',
 						action: 'Listar estados',
@@ -538,7 +538,7 @@ export class ImobziProperties implements INodeType {
 
 			// Property IDs
 			{
-				displayName: 'ID do Imóvel',
+				displayName: 'ID Do Imóvel',
 				name: 'propertyId',
 				type: 'string',
 				required: true,
@@ -552,7 +552,7 @@ export class ImobziProperties implements INodeType {
 				description: 'ID do imóvel no Imobzi',
 			},
 			{
-				displayName: 'Código do Imóvel',
+				displayName: 'Código Do Imóvel',
 				name: 'propertyCode',
 				type: 'string',
 				required: true,
@@ -566,7 +566,7 @@ export class ImobziProperties implements INodeType {
 				description: 'Código do imóvel no Imobzi',
 			},
 			{
-				displayName: 'ID do Imóvel',
+				displayName: 'ID Do Imóvel',
 				name: 'propertyId',
 				type: 'string',
 				required: true,
@@ -580,7 +580,7 @@ export class ImobziProperties implements INodeType {
 				description: 'ID do imóvel no Imobzi',
 			},
 			{
-				displayName: 'ID da Foto',
+				displayName: 'ID Da Foto',
 				name: 'photoId',
 				type: 'string',
 				required: true,
@@ -591,12 +591,11 @@ export class ImobziProperties implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da foto',
 			},
 
 			// Type/Feature/Field IDs
 			{
-				displayName: 'ID do Tipo',
+				displayName: 'ID Do Tipo',
 				name: 'typeId',
 				type: 'string',
 				required: true,
@@ -610,7 +609,7 @@ export class ImobziProperties implements INodeType {
 				description: 'ID do tipo de imóvel',
 			},
 			{
-				displayName: 'ID da Característica',
+				displayName: 'ID Da Característica',
 				name: 'featureId',
 				type: 'string',
 				required: true,
@@ -621,10 +620,9 @@ export class ImobziProperties implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da característica',
 			},
 			{
-				displayName: 'ID do Campo',
+				displayName: 'ID Do Campo',
 				name: 'fieldId',
 				type: 'string',
 				required: true,
@@ -640,7 +638,7 @@ export class ImobziProperties implements INodeType {
 
 			// Advert/Reserve/Neighborhood IDs
 			{
-				displayName: 'Chave do Anúncio',
+				displayName: 'Chave Do Anúncio',
 				name: 'advertKey',
 				type: 'string',
 				required: true,
@@ -651,10 +649,9 @@ export class ImobziProperties implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Chave do anúncio',
 			},
 			{
-				displayName: 'ID da Reserva',
+				displayName: 'ID Da Reserva',
 				name: 'reserveId',
 				type: 'string',
 				required: true,
@@ -665,10 +662,9 @@ export class ImobziProperties implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da reserva',
 			},
 			{
-				displayName: 'ID do Bairro',
+				displayName: 'ID Do Bairro',
 				name: 'neighborhoodId',
 				type: 'string',
 				required: true,
@@ -679,7 +675,6 @@ export class ImobziProperties implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do bairro',
 			},
 
 			// ==================== FILTROS PARA PROPERTY ====================
@@ -719,13 +714,13 @@ export class ImobziProperties implements INodeType {
 							{ name: 'Todas', value: '' },
 							{ name: 'Venda', value: 'sell' },
 							{ name: 'Aluguel', value: 'rent' },
-							{ name: 'Venda e Aluguel', value: 'both' },
+							{ name: 'Venda E Aluguel', value: 'both' },
 						],
 						default: '',
 						description: 'Finalidade do imóvel',
 					},
 					{
-						displayName: 'Tipo de Imóvel',
+						displayName: 'Tipo De Imóvel',
 						name: 'property_type',
 						type: 'string',
 						default: '',
@@ -750,31 +745,29 @@ export class ImobziProperties implements INodeType {
 						name: 'min_value',
 						type: 'number',
 						default: 0,
-						description: 'Valor mínimo',
 					},
 					{
 						displayName: 'Valor Máximo',
 						name: 'max_value',
 						type: 'number',
 						default: 0,
-						description: 'Valor máximo',
 					},
 					{
-						displayName: 'Quartos (mínimo)',
+						displayName: 'Quartos (Mínimo)',
 						name: 'min_bedrooms',
 						type: 'number',
 						default: 0,
 						description: 'Número mínimo de quartos',
 					},
 					{
-						displayName: 'Área Mínima (m²)',
+						displayName: 'Área Mínima (M²)',
 						name: 'min_area',
 						type: 'number',
 						default: 0,
 						description: 'Área mínima em m²',
 					},
 					{
-						displayName: 'Área Máxima (m²)',
+						displayName: 'Área Máxima (M²)',
 						name: 'max_area',
 						type: 'number',
 						default: 0,
@@ -840,7 +833,7 @@ export class ImobziProperties implements INodeType {
 
 			// Property Create/Update
 			{
-				displayName: 'Dados do Imóvel',
+				displayName: 'Dados Do Imóvel',
 				name: 'propertyData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -890,20 +883,19 @@ export class ImobziProperties implements INodeType {
 						options: [
 							{ name: 'Venda', value: 'sell' },
 							{ name: 'Aluguel', value: 'rent' },
-							{ name: 'Venda e Aluguel', value: 'both' },
+							{ name: 'Venda E Aluguel', value: 'both' },
 						],
 						default: 'rent',
 						description: 'Finalidade do imóvel',
 					},
 					{
-						displayName: 'Valor de Venda',
+						displayName: 'Valor De Venda',
 						name: 'sale_value',
 						type: 'number',
 						default: 0,
-						description: 'Valor de venda',
 					},
 					{
-						displayName: 'Valor de Aluguel',
+						displayName: 'Valor De Aluguel',
 						name: 'rental_value',
 						type: 'number',
 						default: 0,
@@ -935,14 +927,12 @@ export class ImobziProperties implements INodeType {
 						name: 'neighborhood',
 						type: 'string',
 						default: '',
-						description: 'Bairro',
 					},
 					{
 						displayName: 'Cidade',
 						name: 'city',
 						type: 'string',
 						default: '',
-						description: 'Cidade',
 					},
 					{
 						displayName: 'Estado',
@@ -956,17 +946,16 @@ export class ImobziProperties implements INodeType {
 						name: 'zipcode',
 						type: 'string',
 						default: '',
-						description: 'CEP',
 					},
 					{
-						displayName: 'Área Total (m²)',
+						displayName: 'Área Total (M²)',
 						name: 'total_area',
 						type: 'number',
 						default: 0,
 						description: 'Área total em m²',
 					},
 					{
-						displayName: 'Área Útil (m²)',
+						displayName: 'Área Útil (M²)',
 						name: 'useful_area',
 						type: 'number',
 						default: 0,
@@ -1029,25 +1018,23 @@ export class ImobziProperties implements INodeType {
 						description: 'Status do imóvel',
 					},
 					{
-						displayName: 'Valor do Condomínio',
+						displayName: 'Valor Do Condomínio',
 						name: 'condo_value',
 						type: 'number',
 						default: 0,
-						description: 'Valor do condomínio',
 					},
 					{
-						displayName: 'Valor do IPTU',
+						displayName: 'Valor Do IPTU',
 						name: 'iptu_value',
 						type: 'number',
 						default: 0,
-						description: 'Valor do IPTU',
 					},
 				],
 			},
 
 			// Type/Feature/Field/Neighborhood Data
 			{
-				displayName: 'Dados do Tipo',
+				displayName: 'Dados Do Tipo',
 				name: 'typeData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1076,7 +1063,7 @@ export class ImobziProperties implements INodeType {
 				],
 			},
 			{
-				displayName: 'Dados da Característica',
+				displayName: 'Dados Da Característica',
 				name: 'featureData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1105,7 +1092,7 @@ export class ImobziProperties implements INodeType {
 				],
 			},
 			{
-				displayName: 'Dados do Campo',
+				displayName: 'Dados Do Campo',
 				name: 'fieldData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1148,7 +1135,7 @@ export class ImobziProperties implements INodeType {
 				],
 			},
 			{
-				displayName: 'Dados do Bairro',
+				displayName: 'Dados Do Bairro',
 				name: 'neighborhoodData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1186,7 +1173,7 @@ export class ImobziProperties implements INodeType {
 
 			// Photo data
 			{
-				displayName: 'Dados da Foto',
+				displayName: 'Dados Da Foto',
 				name: 'photoData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1199,11 +1186,10 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						displayName: 'URL da Imagem',
+						displayName: 'URL Da Imagem',
 						name: 'url',
 						type: 'string',
 						default: '',
-						description: 'URL da imagem',
 					},
 					{
 						displayName: 'Descrição',
@@ -1231,7 +1217,7 @@ export class ImobziProperties implements INodeType {
 
 			// Advert data
 			{
-				displayName: 'Dados do Anúncio',
+				displayName: 'Dados Do Anúncio',
 				name: 'advertData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1258,7 +1244,7 @@ export class ImobziProperties implements INodeType {
 						description: 'Portal de anúncio',
 					},
 					{
-						displayName: 'ID do Imóvel',
+						displayName: 'ID Do Imóvel',
 						name: 'property_id',
 						type: 'string',
 						default: '',
@@ -1276,7 +1262,7 @@ export class ImobziProperties implements INodeType {
 
 			// Reserve data
 			{
-				displayName: 'Dados da Reserva',
+				displayName: 'Dados Da Reserva',
 				name: 'reserveData',
 				type: 'collection',
 				placeholder: 'Adicionar Campo',
@@ -1289,28 +1275,26 @@ export class ImobziProperties implements INodeType {
 				},
 				options: [
 					{
-						displayName: 'ID do Imóvel',
+						displayName: 'ID Do Imóvel',
 						name: 'property_id',
 						type: 'string',
 						default: '',
-						description: 'ID do imóvel',
 					},
 					{
-						displayName: 'ID do Contato',
+						displayName: 'ID Do Contato',
 						name: 'contact_id',
 						type: 'string',
 						default: '',
-						description: 'ID do contato',
 					},
 					{
-						displayName: 'Data de Início',
+						displayName: 'Data De Início',
 						name: 'start_date',
 						type: 'dateTime',
 						default: '',
 						description: 'Data de início da reserva',
 					},
 					{
-						displayName: 'Data de Fim',
+						displayName: 'Data De Fim',
 						name: 'end_date',
 						type: 'dateTime',
 						default: '',
@@ -1353,7 +1337,6 @@ export class ImobziProperties implements INodeType {
 				},
 				typeOptions: {
 					minValue: 1,
-					maxValue: 100,
 				},
 				default: 50,
 				description: 'Max number of results to return',
