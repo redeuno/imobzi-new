@@ -40,8 +40,6 @@
       "dist/credentials/ImobziApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ImobziSimples/ImobziSimples.node.js",
-      "dist/nodes/Imobzi/Imobzi.node.js",
       "dist/nodes/ImobziWebhook/ImobziWebhook.node.js",
       "dist/nodes/ImobziContacts/ImobziContacts.node.js",
       "dist/nodes/ImobziProperties/ImobziProperties.node.js",
